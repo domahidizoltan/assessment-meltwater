@@ -1,0 +1,42 @@
+number1 +36991212321
+subscribe number1
+
+number2 +36991234321
+subscribe number2
+
+number3 +36991234567
+subscribe number3
+
+number4 +36991212121
+
+group1 +3699123*
+message number1 number2 "Hi Ann, pub this evening will be fine"
+message number1 number4 "No, dry cleaning will have to wait until tomorrow"
+message number1 number2,number4 "guys, I'm back at work now..."
+message number3 group1 "The world is great, plan your vacation today"
+
+unsubscribe number1
+message number1 number2,number3 "guys, are you going for lunch?"
+
+unsubscribe number3
+unsubscribe number1
+
+message group1 "The world is great, still haven't planned your vacation?"
+
+number5 +36123412341
+subscribe number5
+
+message number5 broadcast "New phone service... check it out now!"
+
+
+sleep 2
+
+subscribe number4
+
+sleep 5
+
+subscribe number1
+subscribe number2
+subscribe number3
+subscribe number4
+subscribe number5
